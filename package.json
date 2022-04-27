@@ -1,0 +1,35 @@
+{
+  "name": "fish-search",
+  "version": "1.0.0",
+  "description": "It is a fish search function for Japan.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keiz1213/fish-search.git"
+  },
+  "keywords": [
+    "fishing",
+    "japan",
+    "fish",
+    "search"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/keiz1213/fish-search/issues"
+  },
+  "homepage": "https://github.com/keiz1213/fish-search#readme",
+  "devDependencies": {
+    "eslint": "^8.14.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.2.0",
+    "eslint-plugin-promise": "^6.0.0"
+  },
+  "dependencies": {
+    "enquirer": "^2.3.6"
+  }
+}
