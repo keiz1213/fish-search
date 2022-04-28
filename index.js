@@ -1,6 +1,6 @@
 const Fish = require('./fish')
+const Choice = require('./choice')
 const fishData = require('./fish_data')
-const firstChoices = ['旬の時期', 'よく釣れる時期', '釣り方', '食べ方']
 const allFishes = Fish.createAllFishes(fishData)
 
 const createPrompt = (choices, message) => {
@@ -24,42 +24,26 @@ const compare = (a, b) => {
   return index
 }
 
-const getAllSeason = (allFishes) => {
-  const seasons = allFishes.map(fish => fish.season)
-  const month = Array.from(new Set(seasons.flat()))
-  return month.sort(compare)
-}
-
-const getAllHowToFish = (allFishes) => {
-  const howToFish = allFishes.map(fish => fish.howToFish)
-  return Array.from(new Set(howToFish.flat()))
-}
-
-const getAllHowToEat = (allFishes) => {
-  const howToEat = allFishes.map(fish => fish.howToEat)
-  return Array.from(new Set(howToEat.flat()))
-}
-
 const filterWithSeason = async (allFishes) => {
-  const prompt = createPrompt(getAllSeason(allFishes), '月を選択してください')
+  const prompt = createPrompt(Choice.allMonth(allFishes, compare), '月を選択してください')
   const answer = await prompt.run()
   return allFishes.filter(fish => fish.season.includes(answer))
 }
 
 const filterWithFishingSeason = async (allFishes) => {
-  const prompt = createPrompt(getAllSeason(allFishes), '月を選択してください')
+  const prompt = createPrompt(Choice.allMonth(allFishes), '月を選択してください')
   const answer = await prompt.run()
   return allFishes.filter(fish => fish.fishingSeason.includes(answer))
 }
 
 const filterWithHowtoFish = async (allFishes) => {
-  const prompt = createPrompt(getAllHowToFish(allFishes), '釣り方を選択してください')
+  const prompt = createPrompt(Choice.allHowToFish(allFishes), '釣り方を選択してください')
   const answer = await prompt.run()
   return allFishes.filter(fish => fish.howToFish.includes(answer))
 }
 
 const filterWithHowtoEat = async (allFishes) => {
-  const prompt = createPrompt(getAllHowToEat(allFishes), '食べ方を選択してください')
+  const prompt = createPrompt(Choice.allHowToEat(allFishes), '食べ方を選択してください')
   const answer = await prompt.run()
   return allFishes.filter(fish => fish.howToEat.includes(answer))
 }
@@ -94,4 +78,4 @@ const main = async (firstChoices, allFishes) => {
   showFishInfo(filteredFishes)
 }
 
-main(firstChoices, allFishes)
+main(Choice.firstChoices(), allFishes)
