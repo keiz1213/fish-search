@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Simple fish search application for Japan.",
   "main": "index.js",
-  "bin" : "index.js",
+  "bin" : {
+    "fish-search": "index.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
