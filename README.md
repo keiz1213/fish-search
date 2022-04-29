@@ -43,3 +43,7 @@ Choose the dishes which you want to eat.
 Choose the name of the fish.
 
 ![README_md_—_fish-search](https://user-images.githubusercontent.com/72614612/165951449-7c7c0d29-9f66-4177-9451-d0d7ad1b66c8.png)
+
+### Third choice
+You can choice a fish that you want to check.
+![README_md_—_fish-search](https://user-images.githubusercontent.com/72614612/165955874-96ca314e-4280-4cb6-806b-ca8722f3f0d2.png)
