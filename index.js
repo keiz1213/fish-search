@@ -17,6 +17,8 @@ class Main {
       fishes = await search.searchByHowToFish()
     } else if (answer === '食べ方から探す') {
       fishes = await search.searchByHowToEat()
+    } else if (answer === '魚の名前から探す') {
+      fishes = await search.searchByName()
     }
     search.showFishInfo(fishes)
   }
