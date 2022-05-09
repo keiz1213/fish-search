@@ -1,6 +1,6 @@
 {
   "name": "fish-search",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Simple fish search application for Japan.",
   "main": "index.js",
   "bin": {
